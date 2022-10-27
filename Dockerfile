@@ -12,7 +12,7 @@ COPY SimpleApi.csproj .
 RUN dotnet restore "SimpleApi.csproj"
 COPY . .
 WORKDIR "/src"
-RUN dotnet build "SimpleApi.csproj" -c Release -o --no-restore /app/build 
+RUN dotnet build "SimpleApi.csproj" -c Release -o /app/build 
 
 FROM build AS publish
 RUN dotnet publish "SimpleApi.csproj" -c Release -o /app/publish
