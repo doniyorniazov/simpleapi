@@ -8,11 +8,11 @@ ENV ASPNETCORE_URLS=http://+:80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY SimpleApi.csproj SimpleApi/
-RUN dotnet restore "SimpleApi/SimpleApi.csproj"
+COPY SimpleApi.csproj .
+RUN dotnet restore "SimpleApi.csproj"
 COPY . .
-WORKDIR "/src/SimpleApi"
-RUN dotnet build "SimpleApi.csproj" -c Release -o /app/build
+WORKDIR "/src"
+RUN dotnet build "SimpleApi.csproj" -c Release -o --no-restore /app/build 
 
 FROM build AS publish
 RUN dotnet publish "SimpleApi.csproj" -c Release -o /app/publish
