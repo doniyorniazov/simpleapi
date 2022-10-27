@@ -14,9 +14,10 @@ namespace SimpleApi.Controllers
     {
         private static List<GuestModel> guests = new()
         {
-            new GuestModel { Id = 1, FirstName = "Qutfullo", LastName = "Ochilov" },
-            new GuestModel { Id = 2, FirstName = "Dilshod", LastName = "Komilov" },
-            new GuestModel { Id = 3, FirstName = "Usmonjon", LastName = "Nurmatov" }
+            new GuestModel { Id = 1, FirstName = "V2", LastName = "V2" },
+            new GuestModel { Id = 1, FirstName = "Samuel", LastName = "Green" },
+            new GuestModel { Id = 2, FirstName = "Sateshi", LastName = "Nakamoto" },
+            new GuestModel { Id = 3, FirstName = "John", LastName = "Doe" }
         };
 
         // GET: api/<GuestsController>
